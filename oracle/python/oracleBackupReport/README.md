@@ -47,3 +47,6 @@ Place both files in a folder together and run the main script like so:
 * -l, --includelogs: (optional) log backups are skippped by default
 * -x, --units: (optional) MiB or GiB (default is MiB)
 * -n, --numruns: (optional) number of runs to retrieve per API call (default is 100)
+* -j, --jobname: (optional) limit report to specific protection group name
+* -N, --dbname: (optional) limit report to specific database name
+* -U, --dbuuid: (optional) limit report to specific database UUID
