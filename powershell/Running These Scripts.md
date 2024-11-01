@@ -82,7 +82,7 @@ The error indicates that PowerShell doesn't trust the SSL certificate on GitHub'
 
 ```powershell
 # commands to fix SSL
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor [System.Net.SecurityProtocolType]::Tls12
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { return $true }
 $ignoreCerts = @"
 public class SSLHandler

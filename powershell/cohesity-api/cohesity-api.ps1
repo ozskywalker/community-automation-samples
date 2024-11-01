@@ -57,7 +57,7 @@ if($PSVersionTable.Platform -ne 'Unix'){
 }
 
 if($PSVersionTable.PSEdition -eq 'Desktop'){
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor [System.Net.SecurityProtocolType]::Tls12
     [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { return $true }
     $ignoreCerts = @"
 public class SSLHandler

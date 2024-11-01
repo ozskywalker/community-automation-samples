@@ -42,7 +42,7 @@ if($Host.Version.Major -le 5 -and $Host.Version.Minor -lt 1){
 }
 
 if($PSVersionTable.PSEdition -eq 'Desktop'){
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor [System.Net.SecurityProtocolType]::Tls12
     [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { return $true }
     $ignoreCerts = @"
 public class SSLHandler
